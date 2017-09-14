@@ -1,0 +1,204 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import 'reset.scss';
+
+ html, body {
+   height: 100%;
+   width: 100%;
+   background-color: black;
+   overflow: hidden;
+ }
+
+ #root {
+   width: 100%;
+   height: 100%;
+ }
+
+ .background {
+   height: 100%;
+   width: 100%;
+   background-image: url('https://res.cloudinary.com/genus-development/image/upload/v1505413945/background_qsu9un.png');
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+ }
+
+ .opacity-layer {
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.6);
+ }
+
+ .content {
+   height: 100%;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: space-around;
+ }
+
+ .top, .middle, .bottom {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+ }
+
+ .top {
+   width: 100%;
+   height: 40%;
+ }
+
+ .middle {
+   width: 100%;
+   height: 20%;
+ }
+
+ .bottom {
+   width: 100%;
+   height: 40%;
+ }
+
+ .logo {
+   width: 70px;
+   height: 50px;
+ }
+
+ .header {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   font-family: 'Source Sans Pro', sans-serif;
+   font-weight: 200;
+   font-size: 36px;
+   color: white;
+ }
+
+ .sub-header, .email-form, .bottom {
+   font-family: 'Source Sans Pro', sans-serif;
+   font-weight: 300;
+   color: white;
+ }
+
+ .sub-header {
+   font-size: 25px;
+   width: 30%;
+   align-self: center;
+   text-align: center;
+ }
+
+ .email-form {
+   padding: 10px;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+ }
+
+ .bottom {
+   width: 30%;
+   align-self: center;
+   text-align: center;
+   font-size: 40px;
+ }
+
+ .hidden-button {
+   height: 43px;
+   width: 43px;
+   visibility: hidden;
+ }
+
+ .button {
+   height: 43px;
+   width: 43px;
+   visibility: visible;
+ }
+
+ .email-input {
+   margin-left: 40px;
+   width: 200px;
+   height: 20px;
+   padding: 10px;
+   color: red;
+   font-family: 'Source Sans Pro', sans-serif;
+   font-weight: 300;
+   font-size: 20px;
+   text-align: center;
+   background: rgba(255, 255, 255, 0.2);
+   border: none;
+   outline-color: red;
+ }
+
+ /*email-input needs 107 margin left additional*/
+
+ ::-webkit-input-placeholder {
+   font-family: 'Source Sans Pro', sans-serif;
+   font-weight: 300;
+   color: red;
+   text-align: center;
+ }
+
+ [placeholder]:focus::-webkit-input-placeholder {
+   transition: opacity 0.5s 0.5s ease;
+   opacity: 0;
+ }
+
+ .submit-icon-1 {
+   height: 43px;
+   width: 43px;
+   cursor: pointer;
+ }
+
+ .submit-icon-2 {
+   height: 30px;
+   width: 30px;
+   align-self: flex-end;
+   cursor: pointer;
+ }
+
+ .role-options {
+   margin-left: 10px;
+   margin-top: 5px;
+ }
+
+ .r-o-1, .r-o-2, .r-o-3 {
+   margin-right: 10px;
+ }
+
+ .selection-form {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-content: center;
+   width: 150px;
+   height: 100px;
+   margin-top: 56px;
+   background-color: black;
+   visibility: visible;
+ }
+
+ .hidden-selection-form {
+   width: 150px;
+   height: 100px;
+   visibility: hidden;
+ }

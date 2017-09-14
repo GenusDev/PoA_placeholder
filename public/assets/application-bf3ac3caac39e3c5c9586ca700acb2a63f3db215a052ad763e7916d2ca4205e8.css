@@ -1,0 +1,268 @@
+/* line 1, /Users/ericadams/Desktop/PoA/app/assets/stylesheets/reset.scss */
+html, body, header, nav, h1, a,
+ul, li, strong, main, button, i,
+section, img, div, h2, p, form,
+fieldset, label, input, textarea,
+span, article, footer, time, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+}
+
+/* line 19, /Users/ericadams/Desktop/PoA/app/assets/stylesheets/reset.scss */
+ul {
+  list-style: none;
+}
+
+/* line 23, /Users/ericadams/Desktop/PoA/app/assets/stylesheets/reset.scss */
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* line 29, /Users/ericadams/Desktop/PoA/app/assets/stylesheets/reset.scss */
+input[type="password"],
+input[type="email"],
+input[type="text"],
+input[type="submit"],
+textarea,
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* line 40, /Users/ericadams/Desktop/PoA/app/assets/stylesheets/reset.scss */
+button,
+input[type="submit"] {
+  cursor: pointer;
+}
+
+/* Clearfix */
+/* line 47, /Users/ericadams/Desktop/PoA/app/assets/stylesheets/reset.scss */
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* line 20, /Users/ericadams/Desktop/PoA/app/assets/stylesheets/application.scss */
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  overflow: hidden;
+}
+
+/* line 27, /Users/ericadams/Desktop/PoA/app/assets/stylesheets/application.scss */
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 32, /Users/ericadams/Desktop/PoA/app/assets/stylesheets/application.scss */
+.background {
+  height: 100%;
+  width: 100%;
+  background-image: url("https://res.cloudinary.com/genus-development/image/upload/v1505413945/background_qsu9un.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* line 45, /Users/ericadams/Desktop/PoA/app/assets/stylesheets/application.scss */
+.opacity-layer {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* line 51, /Users/ericadams/Desktop/PoA/app/assets/stylesheets/application.scss */
+.content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-around;
+}
+
+/* line 60, /Users/ericadams/Desktop/PoA/app/assets/stylesheets/application.scss */
+.top, .middle, .bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 67, /Users/ericadams/Desktop/PoA/app/assets/stylesheets/application.scss */
+.top {
+  width: 100%;
+  height: 40%;
+}
+
+/* line 72, /Users/ericadams/Desktop/PoA/app/assets/stylesheets/application.scss */
+.middle {
+  width: 100%;
+  height: 20%;
+}
+
+/* line 77, /Users/ericadams/Desktop/PoA/app/assets/stylesheets/application.scss */
+.bottom {
+  width: 100%;
+  height: 40%;
+}
+
+/* line 82, /Users/ericadams/Desktop/PoA/app/assets/stylesheets/application.scss */
+.logo {
+  width: 70px;
+  height: 50px;
+}
+
+/* line 87, /Users/ericadams/Desktop/PoA/app/assets/stylesheets/application.scss */
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 200;
+  font-size: 36px;
+  color: white;
+}
+
+/* line 98, /Users/ericadams/Desktop/PoA/app/assets/stylesheets/application.scss */
+.sub-header, .email-form, .bottom {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  color: white;
+}
+
+/* line 104, /Users/ericadams/Desktop/PoA/app/assets/stylesheets/application.scss */
+.sub-header {
+  font-size: 25px;
+  width: 30%;
+  align-self: center;
+  text-align: center;
+}
+
+/* line 111, /Users/ericadams/Desktop/PoA/app/assets/stylesheets/application.scss */
+.email-form {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 119, /Users/ericadams/Desktop/PoA/app/assets/stylesheets/application.scss */
+.bottom {
+  width: 30%;
+  align-self: center;
+  text-align: center;
+  font-size: 40px;
+}
+
+/* line 126, /Users/ericadams/Desktop/PoA/app/assets/stylesheets/application.scss */
+.hidden-button {
+  height: 43px;
+  width: 43px;
+  visibility: hidden;
+}
+
+/* line 132, /Users/ericadams/Desktop/PoA/app/assets/stylesheets/application.scss */
+.button {
+  height: 43px;
+  width: 43px;
+  visibility: visible;
+}
+
+/* line 138, /Users/ericadams/Desktop/PoA/app/assets/stylesheets/application.scss */
+.email-input {
+  margin-left: 40px;
+  width: 200px;
+  height: 20px;
+  padding: 10px;
+  color: red;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  outline-color: red;
+}
+
+/*email-input needs 107 margin left additional*/
+/* line 155, /Users/ericadams/Desktop/PoA/app/assets/stylesheets/application.scss */
+::-webkit-input-placeholder {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  color: red;
+  text-align: center;
+}
+
+/* line 162, /Users/ericadams/Desktop/PoA/app/assets/stylesheets/application.scss */
+[placeholder]:focus::-webkit-input-placeholder {
+  transition: opacity 0.5s 0.5s ease;
+  opacity: 0;
+}
+
+/* line 167, /Users/ericadams/Desktop/PoA/app/assets/stylesheets/application.scss */
+.submit-icon-1 {
+  height: 43px;
+  width: 43px;
+  cursor: pointer;
+}
+
+/* line 173, /Users/ericadams/Desktop/PoA/app/assets/stylesheets/application.scss */
+.submit-icon-2 {
+  height: 30px;
+  width: 30px;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+/* line 180, /Users/ericadams/Desktop/PoA/app/assets/stylesheets/application.scss */
+.role-options {
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+/* line 185, /Users/ericadams/Desktop/PoA/app/assets/stylesheets/application.scss */
+.r-o-1, .r-o-2, .r-o-3 {
+  margin-right: 10px;
+}
+
+/* line 189, /Users/ericadams/Desktop/PoA/app/assets/stylesheets/application.scss */
+.selection-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 150px;
+  height: 100px;
+  margin-top: 56px;
+  background-color: black;
+  visibility: visible;
+}
+
+/* line 201, /Users/ericadams/Desktop/PoA/app/assets/stylesheets/application.scss */
+.hidden-selection-form {
+  width: 150px;
+  height: 100px;
+  visibility: hidden;
+}
