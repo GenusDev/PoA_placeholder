@@ -56,7 +56,7 @@
    align-items: space-around;
  }
 
- .top, .middle, .bottom {
+ .top, .middle-1, .middle-2, .bottom {
    display: flex;
    flex-direction: column;
    justify-content: center;
@@ -68,9 +68,14 @@
    height: 40%;
  }
 
- .middle {
+ .middle-1 {
    width: 100%;
-   height: 20%;
+   height: 10%;
+ }
+
+ .middle-2 {
+   width: 100%;
+   height: 10%;
  }
 
  .bottom {
@@ -134,27 +139,54 @@
    visibility: visible;
  }
 
- .email-input {
+ .email-input-1 {
    margin-left: 40px;
    width: 200px;
    height: 20px;
    padding: 10px;
-   color: red;
+   color: white;
+   background: rgba(255, 255, 255, 0.4);
    font-family: 'Source Sans Pro', sans-serif;
    font-weight: 300;
    font-size: 20px;
    text-align: center;
-   background: rgba(255, 255, 255, 0.2);
    border: none;
-   outline-color: red;
  }
 
- /*email-input needs 107 margin left additional*/
+ .email-input-2 {
+   margin-left: 147px;
+   width: 200px;
+   height: 20px;
+   padding: 10px;
+   color: white;
+   background: rgba(255, 255, 255, 0.4);
+   font-family: 'Source Sans Pro', sans-serif;
+   font-weight: 300;
+   font-size: 20px;
+   text-align: center;
+   border: none;
+ }
+
+ .email-input-3 {
+   margin-left: 147px;
+   width: 200px;
+   height: 20px;
+   padding: 10px;
+   color: lightgray;
+   background: rgba(128, 128, 128, 0.7);
+   font-family: 'Source Sans Pro', sans-serif;
+   font-weight: 300;
+   font-size: 20px;
+   text-align: center;
+   border: none;
+ }
+
+ /*email-input needs 107 margin left additional after button is clicked*/
 
  ::-webkit-input-placeholder {
    font-family: 'Source Sans Pro', sans-serif;
    font-weight: 300;
-   color: red;
+   color: white;
    text-align: center;
  }
 

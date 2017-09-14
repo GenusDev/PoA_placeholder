@@ -12,7 +12,9 @@ class Root extends React.Component {
       identity1: 'hidden-button',
       identity2: 'hidden-selection-form',
       role: '',
-      button: 'button1'
+      button: 'button1',
+      email_input_status: false,
+      email_style: 'email-input-1'
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -20,6 +22,7 @@ class Root extends React.Component {
     this.selectRole = this.selectRole.bind(this);
     this.validEmail = this.validEmail.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handlePostSubmit = this.handlePostSubmit.bind(this);
   }
 
   update(property) {
@@ -30,9 +33,9 @@ class Root extends React.Component {
   }
 
   handleClick(e) {
-    if(e.target.className === 'email-input') {
+    if(e.target.className === 'email-input-1') {
       this.setState({ identity1: 'button' });
-    } else if(e.target.className !== 'email-input' && this.state.email !== ''){
+    } else if(e.target.className !== 'email-input-1' && this.state.email !== ''){
       this.setState({ identity1: 'button' });
     } else if(e.target.className === 'button' || e.target.className === 'submit-icon' && this.state.email !== '') {
       this.setState({ identity1: 'button' });
@@ -53,7 +56,8 @@ class Root extends React.Component {
   openSelections(e) {
     this.setState({
       button: 'button2',
-      identity2: 'selection-form'
+      identity2: 'selection-form',
+      email_style: 'email-input-2'
     });
   }
 
@@ -70,13 +74,24 @@ class Root extends React.Component {
 
     if(this.validEmail(email) && role !== '') {
       storeInfo(user);
-      window.location.reload();
+      this.handlePostSubmit();
     }
+  }
+
+  handlePostSubmit() {
+    this.setState({
+      email: 'submitted',
+      identity1: 'hidden-button',
+      identity2: 'hidden-selection-form',
+      email_style: 'email-input-3',
+      email_input_status: !this.state.email_input_status
+    });
   }
 
   render() {
 
-    let { email, identity1, identity2 } = this.state;
+    let { email, identity1, identity2,
+          email_input_status, email_style } = this.state;
     let { openSelections, selectRole, handleSubmit } = this;
     let renderedButton = '';
 
@@ -99,17 +114,20 @@ class Root extends React.Component {
                 <div>PARTNERS</div>
               </div>
             </div>
-            <div className="middle">
+            <div className="middle-1">
               <div className="sub-header">
                 stay in touch
               </div>
+            </div>
+            <div className="middle-2">
               <div className="email-form">
                 <input
-                  className="email-input"
+                  className={ email_style }
                   name="email"
                   type="text"
-                  placeholder="submit email"
-                  value={email}
+                  placeholder= "submit email"
+                  value={ email }
+                  disabled={ email_input_status }
                   onChange={this.update('email')}/>
                 {renderedButton}
               </div>
