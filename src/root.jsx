@@ -111,7 +111,7 @@ class Root extends React.Component {
         <div className="opacity-layer">
           <div className="content">
             <div className="top">
-              <img className="logo" src="http://res.cloudinary.com/genus-development/image/upload/v1504828805/logo_s9wj2d.png" alt="logo"/>
+              <img className="logo" src="https://res.cloudinary.com/genus-development/image/upload/v1504828805/logo_s9wj2d.png" alt="logo"/>
               <div className="header">
                 <div>GENUS</div>
                 <div>DEVELOPMENT</div>
