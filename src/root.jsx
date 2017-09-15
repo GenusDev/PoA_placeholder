@@ -1,6 +1,7 @@
 import React from 'react';
 import { button1, button2 } from './buttons';
 import { storeInfo } from  './storeinfo';
+import AboutModal from './about_modal';
 
 class Root extends React.Component {
 
@@ -113,6 +114,7 @@ class Root extends React.Component {
                 <div>DEVELOPMENT</div>
                 <div>PARTNERS</div>
               </div>
+              <AboutModal/>
             </div>
             <div className="middle-1">
               <div className="sub-header">
