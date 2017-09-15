@@ -18,7 +18,6 @@ class Root extends React.Component {
       email_style: 'email-input-1'
     };
 
-    this.handleClick = this.handleClick.bind(this);
     this.openSelections = this.openSelections.bind(this);
     this.selectRole = this.selectRole.bind(this);
     this.validEmail = this.validEmail.bind(this);
@@ -29,24 +28,21 @@ class Root extends React.Component {
   update(property) {
     return (e) => {
       e.preventDefault();
-      this.setState({ [property]: e.currentTarget.value });
-    };
-  }
-
-  handleClick(e) {
-    if(e.target.className === 'email-input-1') {
-      this.setState({ identity1: 'button' });
-    } else if(e.target.className !== 'email-input-1' && this.state.email !== ''){
-      this.setState({ identity1: 'button' });
-    } else if(e.target.className === 'button' || e.target.className === 'submit-icon' && this.state.email !== '') {
-      this.setState({ identity1: 'button' });
-    } else {
-      this.setState({
-        identity1: 'hidden-button',
-        identity2: 'hidden-selection-form',
-        button: 'button1'
+      this.setState({ [property]: e.currentTarget.value }, () => {
+        if(this.state.email === '' && this.state.identity2 === 'selection-form') {
+          this.setState({
+            identity1: 'hidden-button',
+            identity2: 'hidden-selection-form',
+            button: 'button1',
+            email_style: 'email-input-1'
+          });
+        } else if(this.state.email !== '') {
+          this.setState({ identity1: 'button'});
+        } else {
+          this.setState({ identity1: 'hidden-button'});
+        }
       });
-    }
+    };
   }
 
   validEmail(input) {
@@ -67,13 +63,12 @@ class Root extends React.Component {
   }
 
   handleSubmit() {
-    var { email, role } = this.state;
     var user = {
       email: this.state.email,
       role: this.state.role
     };
 
-    if(this.validEmail(email) && role !== '') {
+    if(this.validEmail(user.email) && user.role !== '') {
       storeInfo(user);
       this.handlePostSubmit();
     }
@@ -104,7 +99,7 @@ class Root extends React.Component {
 
     return(
       <div className="background"
-        onClick={this.handleClick}>
+        onChange={this.buttonToggle}>
         <div className="opacity-layer">
           <div className="content">
             <div className="top">
@@ -130,7 +125,7 @@ class Root extends React.Component {
                   placeholder= "submit email"
                   value={ email }
                   disabled={ email_input_status }
-                  onChange={this.update('email')}/>
+                  onChange={ this.update('email') }/>
                 {renderedButton}
               </div>
             </div>
