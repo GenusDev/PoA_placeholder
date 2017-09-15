@@ -56,7 +56,7 @@
    align-items: space-around;
  }
 
- .top, .middle-1, .middle-2, .bottom {
+ .top, .middle-1, .middle-2, .middle-3, .bottom {
    display: flex;
    flex-direction: column;
    justify-content: center;
@@ -78,9 +78,14 @@
    height: 10%;
  }
 
+ .middle-3 {
+   width: 100%;
+   height: 5%;
+ }
+
  .bottom {
    width: 100%;
-   height: 40%;
+   height: 35%;
  }
 
  .logo {
@@ -277,4 +282,11 @@
 
  .about-close-button:hover {
    cursor: pointer;
+ }
+
+ .error {
+   font-family: 'Source Sans Pro', sans-serif;
+   font-weight: 300;
+   font-size: 14px;
+   color: white;
  }

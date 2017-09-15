@@ -15,14 +15,15 @@ class Root extends React.Component {
       role: '',
       button: 'button1',
       email_input_status: false,
-      email_style: 'email-input-1'
+      email_style: 'email-input-1',
+      error: ''
     };
 
     this.openSelections = this.openSelections.bind(this);
     this.selectRole = this.selectRole.bind(this);
-    this.validEmail = this.validEmail.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handlePostSubmit = this.handlePostSubmit.bind(this);
+    this.renderError = this.renderError.bind(this);
   }
 
   update(property) {
@@ -45,11 +46,6 @@ class Root extends React.Component {
     };
   }
 
-  validEmail(input) {
-    var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return regex.test(input);
-  }
-
   openSelections(e) {
     this.setState({
       button: 'button2',
@@ -68,10 +64,22 @@ class Root extends React.Component {
       role: this.state.role
     };
 
-    if(this.validEmail(user.email) && user.role !== '') {
-      storeInfo(user);
-      this.handlePostSubmit();
+    if(user.email && user.role !== '') {
+      storeInfo(user).then(
+        (res) => {
+          console.log(res);
+          this.setState({ error: '' });
+          this.handlePostSubmit();
+        }, err => {
+          this.setState({ error: err.responseJSON.email });
+        });
     }
+  }
+
+  renderError() {
+    return(
+      <div className="error">{this.state.error}</div>
+    );
   }
 
   handlePostSubmit() {
@@ -128,6 +136,9 @@ class Root extends React.Component {
                   onChange={ this.update('email') }/>
                 {renderedButton}
               </div>
+            </div>
+            <div className="middle-3">
+              {this.renderError()}
             </div>
             <div className="bottom">
               <div>portal under</div>
