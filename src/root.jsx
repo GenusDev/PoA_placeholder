@@ -1,6 +1,7 @@
 import React from 'react';
 import { button1, button2 } from './buttons';
 import { storeInfo } from  './storeinfo';
+import AboutModal from './about_modal';
 
 class Root extends React.Component {
 
@@ -14,15 +15,15 @@ class Root extends React.Component {
       role: '',
       button: 'button1',
       email_input_status: false,
-      email_style: 'email-input-1'
+      email_style: 'email-input-1',
+      error: ''
     };
 
-    this.handleClick = this.handleClick.bind(this);
     this.openSelections = this.openSelections.bind(this);
     this.selectRole = this.selectRole.bind(this);
-    this.validEmail = this.validEmail.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handlePostSubmit = this.handlePostSubmit.bind(this);
+    this.renderError = this.renderError.bind(this);
   }
 
   componentDidMount() {    
@@ -93,29 +94,21 @@ class Root extends React.Component {
   update(property) {
     return (e) => {
       e.preventDefault();
-      this.setState({ [property]: e.currentTarget.value });
-    };
-  }
-
-  handleClick(e) {
-    if(e.target.className === 'email-input-1') {
-      this.setState({ identity1: 'button' });
-    } else if(e.target.className !== 'email-input-1' && this.state.email !== ''){
-      this.setState({ identity1: 'button' });
-    } else if(e.target.className === 'button' || e.target.className === 'submit-icon' && this.state.email !== '') {
-      this.setState({ identity1: 'button' });
-    } else {
-      this.setState({
-        identity1: 'hidden-button',
-        identity2: 'hidden-selection-form',
-        button: 'button1'
+      this.setState({ [property]: e.currentTarget.value }, () => {
+        if(this.state.email === '' && this.state.identity2 === 'selection-form') {
+          this.setState({
+            identity1: 'hidden-button',
+            identity2: 'hidden-selection-form',
+            button: 'button1',
+            email_style: 'email-input-1'
+          });
+        } else if(this.state.email !== '') {
+          this.setState({ identity1: 'button'});
+        } else {
+          this.setState({ identity1: 'hidden-button'});
+        }
       });
-    }
-  }
-
-  validEmail(input) {
-    var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return regex.test(input);
+    };
   }
 
   openSelections(e) {
@@ -131,16 +124,27 @@ class Root extends React.Component {
   }
 
   handleSubmit() {
-    var { email, role } = this.state;
     var user = {
       email: this.state.email,
       role: this.state.role
     };
 
-    if(this.validEmail(email) && role !== '') {
-      storeInfo(user);
-      this.handlePostSubmit();
+    if(user.email && user.role !== '') {
+      storeInfo(user).then(
+        (res) => {
+          console.log(res);
+          this.setState({ error: '' });
+          this.handlePostSubmit();
+        }, err => {
+          this.setState({ error: err.responseJSON.email });
+        });
     }
+  }
+
+  renderError() {
+    return(
+      <div className="error">{this.state.error}</div>
+    );
   }
 
   handlePostSubmit() {
@@ -168,7 +172,7 @@ class Root extends React.Component {
 
     return(
       <div className="background"
-        onClick={this.handleClick}>
+        onChange={this.buttonToggle}>
         <div className="opacity-layer">
           <div className="content">
             <div className="top">
@@ -178,6 +182,7 @@ class Root extends React.Component {
                 <div>DEVELOPMENT</div>
                 <div>PARTNERS</div>
               </div>
+              <AboutModal/>
             </div>
             <div className="middle-1">
               <div className="sub-header">
@@ -193,9 +198,12 @@ class Root extends React.Component {
                   placeholder= "submit email"
                   value={ email }
                   disabled={ email_input_status }
-                  onChange={this.update('email')}/>
+                  onChange={ this.update('email') }/>
                 {renderedButton}
               </div>
+            </div>
+            <div className="middle-3">
+              {this.renderError()}
             </div>
             <div className="bottom">
               <div>portal under</div>
