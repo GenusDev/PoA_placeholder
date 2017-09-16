@@ -60,7 +60,7 @@ class Root extends React.Component {
 
   handleSubmit() {
     var user = {
-      email: this.state.email,
+      email: this.state.email.toLowerCase(),
       role: this.state.role
     };
 
