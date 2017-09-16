@@ -182,7 +182,9 @@ class Root extends React.Component {
                 <div>DEVELOPMENT</div>
                 <div>PARTNERS</div>
               </div>
-              <AboutModal/>
+              <div className="about-container">
+                <AboutModal/>
+              </div>
             </div>
             <div className="middle-1">
               <div className="sub-header">

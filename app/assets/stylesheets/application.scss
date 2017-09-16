@@ -125,6 +125,14 @@
    color: white;
  }
 
+ .about-container {
+   z-index: 2;
+   // transition: all .2s ease-in-out;
+   &:hover {
+      // transform: scale(1.2, 1.2);
+   }
+ }
+
  .sub-header, .email-form, .bottom {
    font-family: 'Source Sans Pro', sans-serif;
    font-weight: 300;
@@ -273,16 +281,31 @@
    font-weight: 200;
    font-size: 36px;
    color: rgba(255, 255, 255, 0.4);
+   background-color: black;
+   box-shadow: 0 0 15px 10px black;
+   // color: black;
    text-align: center;
  }
 
  .about-body {
-   width: 26%;
+   width: 35%;
    text-align: justify;
    font-family: 'Source Sans Pro', sans-serif;
    font-weight: 200;
    font-size: 14px;
    color: rgba(255, 255, 255, 0.7);
+ }
+
+ @media screen and (max-width: 800px) {
+   .about-body {
+      width: 75%;
+   }
+ }
+
+  @media screen and (max-width: 600px) {
+   .about-body {
+      width: 95%;
+   }
  }
 
  .about-button {
