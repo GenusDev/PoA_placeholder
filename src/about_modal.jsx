@@ -34,7 +34,7 @@ class AboutModal extends React.Component {
       <div>
         <img
           className="about-button"
-          src="http://res.cloudinary.com/genus-development/image/upload/v1505432507/ABOUT_BUTTON-01_ike3mn.png"
+          src="https://res.cloudinary.com/genus-development/image/upload/v1505432507/ABOUT_BUTTON-01_ike3mn.png"
           onClick={this.openModal}/>
         <Modal
           isOpen={this.state.openModal}
@@ -49,7 +49,7 @@ class AboutModal extends React.Component {
           </div>
           <img
             className="about-close-button"
-            src="http://res.cloudinary.com/genus-development/image/upload/v1505432515/ABOUT_EXIT_BUTTON-01_hyrgnv.png"
+            src="https://res.cloudinary.com/genus-development/image/upload/v1505432515/ABOUT_EXIT_BUTTON-01_hyrgnv.png"
             onClick={this.closeModal}/>
           <div className="about-body">
             Genus Development is an integrated real estate investment,
