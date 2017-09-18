@@ -16,14 +16,14 @@ class Root extends React.Component {
       button: 'button1',
       email_input_status: false,
       email_style: 'email-input-1',
-      error: ''
+      errors: []
     };
 
     this.openSelections = this.openSelections.bind(this);
     this.selectRole = this.selectRole.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handlePostSubmit = this.handlePostSubmit.bind(this);
-    this.renderError = this.renderError.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   update(property) {
@@ -35,7 +35,8 @@ class Root extends React.Component {
             identity1: 'hidden-button',
             identity2: 'hidden-selection-form',
             button: 'button1',
-            email_style: 'email-input-1'
+            email_style: 'email-input-1',
+            errors: ''
           });
         } else if(this.state.email !== '') {
           this.setState({ identity1: 'button'});
@@ -68,18 +69,27 @@ class Root extends React.Component {
       storeInfo(user).then(
         (res) => {
           console.log(res);
-          this.setState({ error: '' });
+          this.setState({ errors: '' });
           this.handlePostSubmit();
         }, err => {
-          this.setState({ error: err.responseJSON.email });
+          this.setState({ errors: err.responseJSON.email });
         });
     }
   }
 
-  renderError() {
-    return(
-      <div className="error">{this.state.error}</div>
-    );
+  renderErrors() {
+
+    if(this.state.errors.length > 0) {
+      return(
+        <div className="errors">
+          {this.state.errors.map((error, i) => (
+            <p key={`error-${i}`}>
+              {error}
+            </p>
+          ))}
+        </div>
+      );
+    }
   }
 
   handlePostSubmit() {
@@ -138,7 +148,7 @@ class Root extends React.Component {
               </div>
             </div>
             <div className="middle-3">
-              {this.renderError()}
+              {this.renderErrors()}
             </div>
             <div className="bottom">
               <div>portal under</div>
