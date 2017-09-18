@@ -31,7 +31,7 @@
  .background {
    height: 100%;
    width: 100%;
-   background-image: url('https://res.cloudinary.com/genus-development/image/upload/v1505413945/background_qsu9un.png');
+   background-image: url('http://res.cloudinary.com/genus-development/image/upload/v1505768873/bg_lknrtm.png');
    background-repeat: no-repeat;
    background-position: center;
    background-size: cover;
@@ -43,21 +43,15 @@
 
 .city-points {
    position: fixed;
-   height: 6255px;
-   width: 5915px;
    height: 100%;
    width: 100%;
-   // background-color: rgba(255,182,193, 0.5);
    -webkit-background-size: cover;
    -moz-background-size: cover;
    -o-background-size: cover;
-   background-size: cover !important;
-   // background-color: rgba(200, 2, 3,0.5);
+   background-size: cover;
    top: 0;
    left: 0;
    z-index: 1;
-   // bottom: 0;
-   // right: 0;
 }
 
  .opacity-layer {
@@ -123,14 +117,11 @@
    font-weight: 200;
    font-size: 36px;
    color: white;
+   z-index: 999;
  }
 
  .about-container {
    z-index: 2;
-   // transition: all .2s ease-in-out;
-   &:hover {
-      // transform: scale(1.2, 1.2);
-   }
  }
 
  .sub-header, .email-form, .bottom {
@@ -276,15 +267,15 @@
  }
 
  .about-header {
-   margin-top: 42px;
-   font-family: 'Source Sans Pro', sans-serif;
-   font-weight: 200;
-   font-size: 36px;
-   color: rgba(255, 255, 255, 0.4);
-   background-color: black;
-   box-shadow: 0 0 15px 10px black;
-   // color: black;
-   text-align: center;
+   // margin-top: 63px;
+   // font-family: 'Source Sans Pro', sans-serif;
+   // font-weight: 200;
+   // font-size: 36px;
+   // color: rgba(255, 255, 255, 0.4);
+   // background-color: black;
+   // box-shadow: 0 0 15px 10px black;
+   // text-align: center;
+   height: 29%;
  }
 
  .about-body {
@@ -296,19 +287,14 @@
    color: rgba(255, 255, 255, 0.7);
  }
 
- @media screen and (max-width: 800px) {
-   .about-body {
-      width: 75%;
-   }
- }
-
-  @media screen and (max-width: 600px) {
-   .about-body {
-      width: 95%;
-   }
- }
-
  .about-button {
+   transition: all .2s ease-in-out;
+   &:hover {
+      transform: scale(1.2, 1.2);
+   }
+ }
+
+ .about-open-button {
    width: 50px;
    height: 30px;
  }
@@ -334,3 +320,34 @@
    font-size: 14px;
    color: white;
  }
+
+
+// Media Queries
+
+ @media screen and (max-width: 800px) {
+   .about-body {
+      width: 75%;
+   }
+ }
+
+  @media screen and (max-width: 500px) {
+   .about-body {
+      width: 95%;
+   }
+ }
+
+
+// Get rid of d3 on smaller screen sizes
+
+  @media screen and (max-width: 1050px) {
+   .city-points {
+      display: none;
+   }
+ }
+
+
+
+
+
+
+

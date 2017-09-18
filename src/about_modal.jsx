@@ -31,9 +31,9 @@ class AboutModal extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className="about-modal">
         <img
-          className="about-button"
+          className="about-open-button about-button"
           src="http://res.cloudinary.com/genus-development/image/upload/v1505432507/ABOUT_BUTTON-01_ike3mn.png"
           onClick={this.openModal}/>
         <Modal
@@ -43,12 +43,9 @@ class AboutModal extends React.Component {
           contentLabel="About Modal"
           className="about-container">
           <div className="about-header">
-            <div>GENUS</div>
-            <div>DEVELOPMENT</div>
-            <div>PARTNERS</div>
           </div>
           <img
-            className="about-close-button"
+            className="about-close-button about-button"
             src="http://res.cloudinary.com/genus-development/image/upload/v1505432515/ABOUT_EXIT_BUTTON-01_hyrgnv.png"
             onClick={this.closeModal}/>
           <div className="about-body">

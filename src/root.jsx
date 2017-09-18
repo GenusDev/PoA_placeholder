@@ -31,13 +31,16 @@ class Root extends React.Component {
     var data = [
       { "x_axis": 300, "y_axis": 200},
       { "x_axis": 275, "y_axis": 270},
-      { "x_axis": 350, "y_axis": 100}];
+      { "x_axis": 310, "y_axis": 100},
+      { "x_axis": 230, "y_axis": 350},
+      { "x_axis": 300, "y_axis": 120},
+      { "x_axis": 295, "y_axis": 128}];
 
     // var bg = d3.select("body")
     //   .style("background-size", "cover")
     //   .classed("background1", true);
 
-    var svg = d3.select("body")
+    var svg = d3.select("#root")
       .append("svg")
      // .style("background-size", "cover")
       .classed("city-points", true)
@@ -48,8 +51,6 @@ class Root extends React.Component {
       .data(data)
       .enter()
       .append("circle")
-      // .style("background-size", "cover")
-      // .style("background-color", "green")
       .attr("cx", function (d) { return d.x_axis; })
       .attr("cy", function (d) { return d.y_axis; })
       .attr("r", function (d) { return 2; })
