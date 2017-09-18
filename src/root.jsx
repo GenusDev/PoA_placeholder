@@ -65,16 +65,19 @@ class Root extends React.Component {
       role: this.state.role
     };
 
-    if(user.email && user.role !== '') {
+    // if(user.email && user.role !== '') {
       storeInfo(user).then(
         (res) => {
           console.log(res);
           this.setState({ errors: '' });
           this.handlePostSubmit();
         }, err => {
-          this.setState({ errors: err.responseJSON.email });
+          console.log(err.responseJSON);
+          this.setState({
+            errors: err.responseJSON.email.concat(err.responseJSON.role)
+          });
         });
-    }
+    // }
   }
 
   renderErrors() {
