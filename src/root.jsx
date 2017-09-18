@@ -16,14 +16,14 @@ class Root extends React.Component {
       button: 'button1',
       email_input_status: false,
       email_style: 'email-input-1',
-      error: ''
+      errors: []
     };
 
     this.openSelections = this.openSelections.bind(this);
     this.selectRole = this.selectRole.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handlePostSubmit = this.handlePostSubmit.bind(this);
-    this.renderError = this.renderError.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   componentDidMount() {    
@@ -101,7 +101,8 @@ class Root extends React.Component {
             identity1: 'hidden-button',
             identity2: 'hidden-selection-form',
             button: 'button1',
-            email_style: 'email-input-1'
+            email_style: 'email-input-1',
+            errors: ''
           });
         } else if(this.state.email !== '') {
           this.setState({ identity1: 'button'});
@@ -126,26 +127,38 @@ class Root extends React.Component {
 
   handleSubmit() {
     var user = {
-      email: this.state.email,
+      email: this.state.email.toLowerCase(),
       role: this.state.role
     };
 
-    if(user.email && user.role !== '') {
+    // if(user.email && user.role !== '') {
       storeInfo(user).then(
         (res) => {
           console.log(res);
-          this.setState({ error: '' });
+          this.setState({ errors: '' });
           this.handlePostSubmit();
         }, err => {
-          this.setState({ error: err.responseJSON.email });
+          console.log(err.responseJSON);
+          this.setState({
+            errors: err.responseJSON.email.concat(err.responseJSON.role)
+          });
         });
-    }
+    // }
   }
 
-  renderError() {
-    return(
-      <div className="error">{this.state.error}</div>
-    );
+  renderErrors() {
+
+    if(this.state.errors.length > 0) {
+      return(
+        <div className="errors">
+          {this.state.errors.map((error, i) => (
+            <p key={`error-${i}`}>
+              {error}
+            </p>
+          ))}
+        </div>
+      );
+    }
   }
 
   handlePostSubmit() {
@@ -177,7 +190,7 @@ class Root extends React.Component {
         <div className="opacity-layer">
           <div className="content">
             <div className="top">
-              <img className="logo" src="http://res.cloudinary.com/genus-development/image/upload/v1504828805/logo_s9wj2d.png" alt="logo"/>
+              <img className="logo" src="https://res.cloudinary.com/genus-development/image/upload/v1504828805/logo_s9wj2d.png" alt="logo"/>
               <div className="header">
                 <div>GENUS</div>
                 <div>DEVELOPMENT</div>
@@ -206,7 +219,7 @@ class Root extends React.Component {
               </div>
             </div>
             <div className="middle-3">
-              {this.renderError()}
+              {this.renderErrors()}
             </div>
             <div className="bottom">
               <div>portal under</div>
