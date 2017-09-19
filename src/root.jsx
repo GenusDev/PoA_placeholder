@@ -26,6 +26,72 @@ class Root extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
   }
 
+  componentDidMount() {    
+    /* D3 code to append elements to this.svg */
+    var data = [
+      { "x_axis": 300, "y_axis": 200},
+      { "x_axis": 275, "y_axis": 270},
+      { "x_axis": 310, "y_axis": 100},
+      { "x_axis": 230, "y_axis": 350},
+      { "x_axis": 300, "y_axis": 120},
+      { "x_axis": 295, "y_axis": 128}];
+
+    // var bg = d3.select("body")
+    //   .style("background-size", "cover")
+    //   .classed("background1", true);
+
+    var svg = d3.select("#root")
+      .append("svg")
+     // .style("background-size", "cover")
+      .classed("city-points", true)
+      .attr("viewBox", "0 0 800 600" )
+      .attr("preserveAspectRatio", "xMidYMid slice");
+
+    var points = svg.selectAll("circle")
+      .data(data)
+      .enter()
+      .append("circle")
+      .attr("cx", function (d) { return d.x_axis; })
+      .attr("cy", function (d) { return d.y_axis; })
+      .attr("r", function (d) { return 2; })
+      .attr("fill", "red")
+      .on("mouseover", function() {
+        d3.select(this)
+          .transition()
+          .duration(200)
+          .attr("stroke", "rgba(158, 54, 31, 0.8)")
+          .attr("stroke-width", "1")
+          .attr("fill-opacity", "0.05")
+          .attr("r", function(d) {
+            return 30;
+          })
+        d3.select(".opacity-layer")
+          .style("background", "rgba(0, 0, 0, 0)")
+      })
+      .on("mouseout", function() {
+        d3.select(this)
+          .transition()
+          .duration(2500)
+          .attr("r", function(d) {
+            return 2;
+          })
+          .attr("fill", "red")
+          .attr("stroke-width", "0")
+          .attr("fill-opacity", "1.0")
+        d3.select(".opacity-layer")
+          .transition()
+          .duration(2000)
+          .style("background", "rgba(0, 0, 0, 0.6)")
+      });
+  }
+  
+
+  // Not sure if this should be commented out
+
+  // shouldComponentUpdate() {
+  //   return false; // This prevents future re-renders of this component
+  // }
+
   update(property) {
     return (e) => {
       e.preventDefault();
@@ -130,7 +196,9 @@ class Root extends React.Component {
                 <div>DEVELOPMENT</div>
                 <div>PARTNERS</div>
               </div>
-              <AboutModal/>
+              <div className="about-container">
+                <AboutModal/>
+              </div>
             </div>
             <div className="middle-1">
               <div className="sub-header">
