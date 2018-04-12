@@ -14,13 +14,14 @@
  *= require_self
  */
 
- @import 'reset.scss';
+ @import 'variables.scss';
 
  html, body {
    height: 100%;
    width: 100%;
    background-color: black;
    overflow: hidden;
+   font-family: 'Source Sans Pro', sans-serif;
  }
 
  #root {
@@ -57,7 +58,7 @@
  .opacity-layer {
    width: 100%;
    height: 100%;
-   background: rgba(0, 0, 0, 0.6);
+   background: $darkblue;
  }
 
  .content {
@@ -78,12 +79,11 @@
 
  .top {
    width: 100%;
-   height: 40%;
+   height: 50%;
  }
 
  .middle-1 {
    width: 100%;
-   height: 10%;
  }
 
  .middle-2 {
@@ -107,7 +107,7 @@
    object-fit: contain;
    width: 70px;
    height: 50px;
-   opacity: 0.8;
+   opacity: 0.5;
  }
 
  .header {
@@ -115,10 +115,10 @@
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   font-family: 'Source Sans Pro', sans-serif;
    font-weight: 200;
-   font-size: 36px;
+   font-size: 30px;
    color: white;
+   opacity: 0.9;
    z-index: 999;
  }
 
@@ -127,7 +127,6 @@
  }
 
  .sub-header, .email-form, .bottom {
-   font-family: 'Source Sans Pro', sans-serif;
    font-weight: 300;
    color: white;
  }
@@ -172,8 +171,7 @@
    height: 20px;
    padding: 10px;
    color: white;
-   background: rgba(255, 255, 255, 0.4);
-   font-family: 'Source Sans Pro', sans-serif;
+   background: $white-fade2;
    font-weight: 300;
    font-size: 20px;
    text-align: center;
@@ -186,8 +184,7 @@
    height: 20px;
    padding: 10px;
    color: white;
-   background: rgba(255, 255, 255, 0.4);
-   font-family: 'Source Sans Pro', sans-serif;
+   background: $white-fade2;
    font-weight: 300;
    font-size: 20px;
    text-align: center;
@@ -200,18 +197,15 @@
    height: 20px;
    padding: 10px;
    color: lightgray;
-   background: rgba(128, 128, 128, 0.7);
-   font-family: 'Source Sans Pro', sans-serif;
+   background: $grey-fade;
    font-weight: 300;
    font-size: 20px;
    text-align: center;
    border: none;
  }
 
- /*email-input needs 107 margin left additional after button is clicked*/
-
+ // email-input needs 107 margin left additional after button is clicked
  ::-webkit-input-placeholder {
-   font-family: 'Source Sans Pro', sans-serif;
    font-weight: 300;
    color: white;
    text-align: center;
@@ -270,14 +264,6 @@
  }
 
  .about-header {
-   // margin-top: 63px;
-   // font-family: 'Source Sans Pro', sans-serif;
-   // font-weight: 200;
-   // font-size: 36px;
-   // color: rgba(255, 255, 255, 0.4);
-   // background-color: black;
-   // box-shadow: 0 0 15px 10px black;
-   // text-align: center;
    height: 29%;
  }
 
@@ -285,10 +271,9 @@
    margin-top: 5%;
    width: 35%;
    text-align: justify;
-   font-family: 'Source Sans Pro', sans-serif;
    font-weight: 200;
    font-size: 14px;
-   color: rgba(255, 255, 255, 0.7);
+   color: $white-fade1;
  }
 
  // About buttons
@@ -307,82 +292,12 @@
  .about-close-button {
    width: 50px;
    height: 30px;
-   margin-bottom: 20px;
    display: none;
  }
 
  .errors {
-   font-family: 'Source Sans Pro', sans-serif;
    font-weight: 300;
    font-size: 14px;
    color: white;
    text-align: center;
- }
-
-
-// Media Queries
-
- @media screen and (max-width: 800px) {
-   .about-body {
-      width: 75%;
-   }
- }
-
-  @media screen and (max-width: 500px) {
-   body {
-      overflow: auto;
-      .about-body {
-         width: 95%;
-      }
-   }
- }
-
-
-// Get rid of d3 on smaller screen sizes
-
-  @media screen and (max-width: 1050px) {
-   .city-points {
-      display: none;
-   }
- }
-
-
-// For extremely tiny screen sizes
-  @media screen and (max-height: 500px) and (max-width: 500px){
-   body {
-      overflow: auto;
-      .background {
-         .opacity-layer {
-            .content {
-               .top {
-                  .header {
-                     font-size: 12px;
-                  }
-               }
-               .middle-1 {
-                  .sub-header {
-                     font-size: 12px;
-                  }
-               }
-               .middle-2 {
-                  font-size: 12px;
-               }
-               .bottom {
-                  font-size: 12px;
-               }
-            }
-         }
-      }
-      div {
-         display: block;
-      }
-   }
- }
-
- @media screen and (max-height: 650px) {
-   body {
-      .about-header {
-         height: 175px;
-      }
-   }
  }
