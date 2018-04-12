@@ -23,19 +23,29 @@ class AboutModal extends React.Component {
 
   openModal() {
     this.setState({ openModal: true });
+    $('#open-button').css("display", "none");
+    $('#close-button').css("display", "block");
   }
 
   closeModal() {
     this.setState({ openModal: false });
+    $('#close-button').css("display", "none");
+    $('#open-button').css("display", "block");
   }
 
   render() {
     return(
       <div className="about-modal">
         <img
+          id="open-button"
           className="about-open-button about-button"
-          src="http://res.cloudinary.com/genus-development/image/upload/v1505432507/ABOUT_BUTTON-01_ike3mn.png"
+          src="https://s3.amazonaws.com/genie-placeholder/about-butt.png"
           onClick={this.openModal}/>
+        <img
+          id="close-button"
+          className="about-close-button about-button"
+          src="https://s3.amazonaws.com/genie-placeholder/about-exit-butt.png"
+          onClick={this.closeModal}/>
         <Modal
           isOpen={this.state.openModal}
           onRequestClose={this.closeModal}
@@ -44,10 +54,6 @@ class AboutModal extends React.Component {
           className="about-container">
           <div className="about-header">
           </div>
-          <img
-            className="about-close-button about-button"
-            src="http://res.cloudinary.com/genus-development/image/upload/v1505432515/ABOUT_EXIT_BUTTON-01_hyrgnv.png"
-            onClick={this.closeModal}/>
           <div className="about-body">
             Genus Development is an integrated real estate investment,
             design and development company headquartered in New York City

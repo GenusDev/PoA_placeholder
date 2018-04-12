@@ -36,13 +36,8 @@ class Root extends React.Component {
       { "x_axis": 300, "y_axis": 120},
       { "x_axis": 295, "y_axis": 128}];
 
-    // var bg = d3.select("body")
-    //   .style("background-size", "cover")
-    //   .classed("background1", true);
-
     var svg = d3.select("#root")
       .append("svg")
-     // .style("background-size", "cover")
       .classed("city-points", true)
       .attr("viewBox", "0 0 800 600" )
       .attr("preserveAspectRatio", "xMidYMid slice");
@@ -51,15 +46,17 @@ class Root extends React.Component {
       .data(data)
       .enter()
       .append("circle")
+      .attr("viewBox", "0 0 800 600" )
+      .attr("preserveAspectRatio", "xMidYMid slice")
       .attr("cx", function (d) { return d.x_axis; })
       .attr("cy", function (d) { return d.y_axis; })
       .attr("r", function (d) { return 2; })
-      .attr("fill", "red")
+      .attr("fill", "white")
       .on("mouseover", function() {
         d3.select(this)
           .transition()
           .duration(200)
-          .attr("stroke", "rgba(158, 54, 31, 0.8)")
+          .attr("stroke", "rgba(56, 71, 120, 0.9)")
           .attr("stroke-width", "1")
           .attr("fill-opacity", "0.05")
           .attr("r", function(d) {
@@ -75,13 +72,13 @@ class Root extends React.Component {
           .attr("r", function(d) {
             return 2;
           })
-          .attr("fill", "red")
+          .attr("fill", "white")
           .attr("stroke-width", "0")
           .attr("fill-opacity", "1.0")
         d3.select(".opacity-layer")
           .transition()
           .duration(2000)
-          .style("background", "rgba(0, 0, 0, 0.6)")
+          .style("background", "rgba(56, 71, 120, 0.7)")
       });
   }
 
@@ -186,7 +183,7 @@ class Root extends React.Component {
     let { openSelections, selectRole, handleSubmit } = this;
     let renderedButton = '';
 
-    if(this.state.button === 'button1') {
+    if (this.state.button === 'button1') {
       renderedButton = button1(identity1, openSelections);
     } else if(this.state.button === 'button2') {
       renderedButton = button2(identity2, selectRole, handleSubmit);
@@ -194,11 +191,12 @@ class Root extends React.Component {
 
     return(
       <div className="background"
+        id="background"
         onChange={this.buttonToggle}>
         <div className="opacity-layer">
           <div className="content">
             <div className="top">
-              <img className="logo" src="http://res.cloudinary.com/genus-development/image/upload/v1507070364/GDCoinWhite-01_u3mvkn.png" alt="logo"/>
+              <img className="logo" src="https://s3.amazonaws.com/genie-placeholder/logo.png" alt="logo"/>
               <div className="header">
                 <div>GENUS</div>
                 <div>DEVELOPMENT</div>

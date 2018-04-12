@@ -4,7 +4,7 @@ export const button1 = (identity1, openSelections) => (
   <div
     className={identity1}
     onClick={openSelections}>
-    <img className="submit-icon-1" src="https://res.cloudinary.com/genus-development/image/upload/v1504832694/submitButton-01_c0dkzg.png"/>
+    <img className="submit-icon-1" src="https://s3.amazonaws.com/genie-placeholder/submit-butt.png"/>
   </div>
 );
 
@@ -44,7 +44,7 @@ export const button2 = (identity2, selectRole, handleSubmit) => (
     </div>
     <img
       className="submit-icon-2"
-      src="https://res.cloudinary.com/genus-development/image/upload/v1504832694/submitButton-01_c0dkzg.png"
+      src="https://s3.amazonaws.com/genie-placeholder/submit-butt.png"
       onClick={handleSubmit}/>
   </div>
 );
