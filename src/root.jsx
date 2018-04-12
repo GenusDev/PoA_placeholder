@@ -128,19 +128,25 @@ class Root extends React.Component {
       role: this.state.role
     };
 
-    // if(user.email && user.role !== '') {
-      storeInfo(user).then(
-        (res) => {
-          console.log(res);
-          this.setState({ errors: '' });
-          this.handlePostSubmit();
-        }, err => {
-          console.log(err.responseJSON);
+    storeInfo(user).then(
+      (res) => {
+        this.setState({ errors: '' });
+        this.handlePostSubmit();
+      }, err => {
+        if(err.responseJSON.email && err.responseJSON.role) {
           this.setState({
             errors: err.responseJSON.email.concat(err.responseJSON.role)
           });
-        });
-    // }
+        } else if(err.responseJSON.email) {
+          this.setState({
+            errors: err.responseJSON.email
+          });
+        } else if(err.responseJSON.role) {
+          this.setState({
+            errors: err.responseJSON.role
+          });
+        }
+      });
   }
 
   renderErrors() {
@@ -169,6 +175,8 @@ class Root extends React.Component {
   }
 
   render() {
+
+    console.log(this.state.errors);
 
     let { email, identity1, identity2,
           email_input_status, email_style } = this.state;

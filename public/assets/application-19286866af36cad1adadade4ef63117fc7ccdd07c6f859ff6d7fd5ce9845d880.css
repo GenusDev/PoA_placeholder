@@ -1,0 +1,521 @@
+/* line 1, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/reset.scss */
+html, body, header, nav, h1, a,
+ul, li, strong, main, button, i,
+section, img, div, h2, p, form,
+fieldset, label, input, textarea,
+span, article, footer, time, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+}
+
+/* line 19, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/reset.scss */
+ul {
+  list-style: none;
+}
+
+/* line 23, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/reset.scss */
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* line 29, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/reset.scss */
+input[type="password"],
+input[type="email"],
+input[type="text"],
+input[type="submit"],
+textarea,
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* line 40, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/reset.scss */
+button,
+input[type="submit"] {
+  cursor: pointer;
+}
+
+/* Clearfix */
+/* line 47, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/reset.scss */
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+/* line 1, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/reset.scss */
+html, body, header, nav, h1, a,
+ul, li, strong, main, button, i,
+section, img, div, h2, p, form,
+fieldset, label, input, textarea,
+span, article, footer, time, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+}
+
+/* line 19, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/reset.scss */
+ul {
+  list-style: none;
+}
+
+/* line 23, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/reset.scss */
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* line 29, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/reset.scss */
+input[type="password"],
+input[type="email"],
+input[type="text"],
+input[type="submit"],
+textarea,
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* line 40, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/reset.scss */
+button,
+input[type="submit"] {
+  cursor: pointer;
+}
+
+/* Clearfix */
+/* line 47, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/reset.scss */
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* line 20, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  overflow: hidden;
+}
+
+/* line 27, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 32, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.background {
+  height: 100%;
+  width: 100%;
+  background-image: url("http://res.cloudinary.com/genus-development/image/upload/v1505768873/bg_lknrtm.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* line 45, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.city-points {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* line 58, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.opacity-layer {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* line 64, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-around;
+}
+
+/* line 73, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.top, .middle-1, .middle-2, .middle-3, .bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 80, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.top {
+  width: 100%;
+  height: 40%;
+}
+
+/* line 85, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.middle-1 {
+  width: 100%;
+  height: 10%;
+}
+
+/* line 90, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.middle-2 {
+  width: 200px;
+  height: 10%;
+  align-self: center;
+  z-index: 2;
+}
+
+/* line 97, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.middle-3 {
+  width: 100%;
+  height: 5%;
+}
+
+/* line 102, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.bottom {
+  width: 100%;
+  height: 35%;
+}
+
+/* line 107, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.logo {
+  width: 70px;
+  height: 50px;
+}
+
+/* line 112, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 200;
+  font-size: 36px;
+  color: white;
+  z-index: 999;
+}
+
+/* line 124, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.about-container {
+  z-index: 2;
+}
+
+/* line 128, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.sub-header, .email-form, .bottom {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  color: white;
+}
+
+/* line 134, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.sub-header {
+  font-size: 25px;
+  width: 30%;
+  align-self: center;
+  text-align: center;
+}
+
+/* line 141, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.email-form {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 149, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.bottom {
+  width: 30%;
+  align-self: center;
+  text-align: center;
+  font-size: 40px;
+}
+
+/* line 156, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.hidden-button {
+  height: 43px;
+  width: 43px;
+  visibility: hidden;
+}
+
+/* line 162, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.button {
+  height: 43px;
+  width: 43px;
+  visibility: visible;
+}
+
+/* line 168, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.email-input-1 {
+  margin-left: 40px;
+  width: 200px;
+  height: 20px;
+  padding: 10px;
+  color: white;
+  background: rgba(255, 255, 255, 0.4);
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  text-align: center;
+  border: none;
+}
+
+/* line 182, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.email-input-2 {
+  margin-left: 147px;
+  width: 200px;
+  height: 20px;
+  padding: 10px;
+  color: white;
+  background: rgba(255, 255, 255, 0.4);
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  text-align: center;
+  border: none;
+}
+
+/* line 196, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.email-input-3 {
+  margin-left: 147px;
+  width: 200px;
+  height: 20px;
+  padding: 10px;
+  color: lightgray;
+  background: rgba(128, 128, 128, 0.7);
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  text-align: center;
+  border: none;
+}
+
+/*email-input needs 107 margin left additional after button is clicked*/
+/* line 212, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+::-webkit-input-placeholder {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  color: white;
+  text-align: center;
+}
+
+/* line 219, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+[placeholder]:focus::-webkit-input-placeholder {
+  transition: opacity 0.5s 0.5s ease;
+  opacity: 0;
+}
+
+/* line 224, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.submit-icon-1 {
+  height: 43px;
+  width: 43px;
+  cursor: pointer;
+}
+
+/* line 230, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.submit-icon-2 {
+  height: 30px;
+  width: 30px;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+/* line 237, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.role-options {
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+/* line 242, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.r-o-1, .r-o-2, .r-o-3 {
+  margin-right: 10px;
+}
+
+/* line 246, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.selection-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 150px;
+  height: 100px;
+  margin-top: 56px;
+  background-color: black;
+  visibility: visible;
+}
+
+/* line 258, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.hidden-selection-form {
+  width: 150px;
+  height: 100px;
+  visibility: hidden;
+}
+
+/* line 264, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* line 270, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.about-header {
+  height: 29%;
+}
+
+/* line 282, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.about-body {
+  width: 35%;
+  text-align: justify;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 200;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* line 291, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.about-button {
+  transition: all .2s ease-in-out;
+}
+/* line 293, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.about-button:hover {
+  transform: scale(1.2, 1.2);
+}
+
+/* line 298, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.about-open-button {
+  width: 50px;
+  height: 30px;
+}
+
+/* line 303, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.about-button:hover {
+  cursor: pointer;
+}
+
+/* line 307, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.about-close-button {
+  width: 50px;
+  height: 30px;
+  align-self: center;
+  margin-bottom: 20px;
+}
+
+/* line 314, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.about-close-button:hover {
+  cursor: pointer;
+}
+
+/* line 318, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.errors {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: white;
+  text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+  /* line 330, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+  .about-body {
+    width: 75%;
+  }
+}
+@media screen and (max-width: 500px) {
+  /* line 336, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+  body {
+    overflow: auto;
+  }
+  /* line 338, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+  body .about-body {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 1050px) {
+  /* line 348, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+  .city-points {
+    display: none;
+  }
+}
+@media screen and (max-height: 500px) and (max-width: 500px) {
+  /* line 356, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+  body {
+    overflow: auto;
+  }
+  /* line 362, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+  body .background .opacity-layer .content .top .header {
+    font-size: 12px;
+  }
+  /* line 367, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+  body .background .opacity-layer .content .middle-1 .sub-header {
+    font-size: 12px;
+  }
+  /* line 371, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+  body .background .opacity-layer .content .middle-2 {
+    font-size: 12px;
+  }
+  /* line 374, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+  body .background .opacity-layer .content .bottom {
+    font-size: 12px;
+  }
+  /* line 380, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+  body div {
+    display: block;
+  }
+}
+@media screen and (max-height: 650px) {
+  /* line 388, /Users/ericadams/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+  body .about-header {
+    height: 175px;
+  }
+}
