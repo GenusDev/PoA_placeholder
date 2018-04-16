@@ -48,7 +48,6 @@ class AboutModal extends React.Component {
           style={ModalStyle}
           contentLabel="About Modal"
           className="about-modal">
-          <div className="about-header"></div>
           <div className="about-body">
             Genus Development is an integrated real estate investment,
             design and development company headquartered in New York City

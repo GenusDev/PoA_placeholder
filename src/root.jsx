@@ -29,12 +29,13 @@ class Root extends React.Component {
   componentDidMount() {
     /* D3 code to append elements to this.svg */
     var data = [
-      { "x_axis": 300, "y_axis": 200},
-      { "x_axis": 275, "y_axis": 270},
-      { "x_axis": 310, "y_axis": 100},
-      { "x_axis": 230, "y_axis": 350},
-      { "x_axis": 300, "y_axis": 120},
-      { "x_axis": 295, "y_axis": 128}];
+      { "x_axis": 341, "y_axis": 115},
+      { "x_axis": 335, "y_axis": 155},
+      { "x_axis": 300, "y_axis": 220},
+      { "x_axis": 290, "y_axis": 250},
+      { "x_axis": 370, "y_axis": 300},
+      { "x_axis": 260, "y_axis": 350},
+    ];
 
     var svg = d3.select("#root")
       .append("svg")
@@ -82,9 +83,7 @@ class Root extends React.Component {
       });
   }
 
-
-  // Not sure if this should be commented out
-
+  // Commented out, because it would disable email-input
   // shouldComponentUpdate() {
   //   return false; // This prevents future re-renders of this component
   // }

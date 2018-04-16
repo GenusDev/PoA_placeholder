@@ -18,7 +18,7 @@
 
 html,
 body {
-  // overflow: hidden;
+  overflow: hidden;
   font-family: 'Source Sans Pro', sans-serif;
   color: $white;
 }
@@ -26,9 +26,9 @@ body {
 #root {
   width: 100%;
   height: 100%;
-  background-image: url('https://s3.amazonaws.com/genie-placeholder/background.png');
+  background-image: url('https://s3.amazonaws.com/genie-placeholder/background-shifted.png');
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: left;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
