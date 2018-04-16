@@ -14,8 +14,6 @@ module.exports = {
     left            : '5%',
     right           : '5%',
     bottom          : '5%',
-    backgroundColor : 'rgba(0, 0 , 0 , 0.95)',
-    zIndex          : 101,
-    color           : 'white'
+    backgroundColor : 'rgba(0, 0 , 0 , 0.95)'
   },
 };

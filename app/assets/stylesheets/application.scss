@@ -14,290 +14,88 @@
  *= require_self
  */
 
- @import 'variables.scss';
+@import 'variables.scss';
 
- html, body {
-   height: 100%;
-   width: 100%;
-   background-color: black;
-   overflow: hidden;
-   font-family: 'Source Sans Pro', sans-serif;
- }
-
- #root {
-   width: 100%;
-   height: 100%;
- }
-
- .background {
-   height: 100%;
-   width: 100%;
-   background-image: url('http://res.cloudinary.com/genus-development/image/upload/v1505768873/bg_lknrtm.png');
-   background-repeat: no-repeat;
-   background-position: center;
-   background-size: cover;
-   -webkit-background-size: cover;
-   -moz-background-size: cover;
-   -o-background-size: cover;
-   background-size: cover;
- }
-
-.city-points {
-   position: fixed;
-   height: 100%;
-   width: 100%;
-   -webkit-background-size: cover;
-   -moz-background-size: cover;
-   -o-background-size: cover;
-   background-size: cover;
-   top: 0;
-   left: 0;
-   z-index: 1;
+html,
+body {
+  // overflow: hidden;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: $white;
 }
 
- .opacity-layer {
-   width: 100%;
-   height: 100%;
-   background: $darkblue;
- }
+#root {
+  width: 100%;
+  height: 100%;
+  background-image: url('https://s3.amazonaws.com/genie-placeholder/background.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
 
- .content {
-   height: 100%;
-   width: 100%;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: space-around;
- }
+.city-points {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
 
- .top, .middle-1, .middle-2, .middle-3, .bottom {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
- }
+.opacity-layer {
+  width: 100%;
+  height: 100%;
+  background: $darkblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-around;
+}
 
- .top {
-   width: 100%;
-   height: 50%;
- }
+.logo {
+  object-fit: contain;
+  width: 70px;
+  height: 50px;
+  z-index: 11;
+}
 
- .middle-1 {
-   width: 100%;
- }
+.header-cont {
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: $font-lg;
+  .header-sub {
+    opacity: 0.75;
+    font-size: $font-md;
+    font-weight: 200;
+  }
+}
 
- .middle-2 {
-   width: 200px;
-   height: 10%;
-   align-self: center;
-   z-index: 2;
- }
+.content-top {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
 
- .middle-3 {
-   width: 100%;
-   height: 5%;
- }
+.content-mid {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  width: 200px;
+  height: 10%;
+  z-index: 3;
+  margin: 0 auto;
+}
 
- .bottom {
-   width: 100%;
-   height: 35%;
- }
-
- .logo {
-   object-fit: contain;
-   width: 70px;
-   height: 50px;
-   opacity: 0.5;
- }
-
- .header {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   font-weight: 200;
-   font-size: 30px;
-   color: white;
-   opacity: 0.9;
-   z-index: 999;
- }
-
- .about-container {
-   z-index: 2;
- }
-
- .sub-header, .email-form, .bottom {
-   font-weight: 300;
-   color: white;
- }
-
- .sub-header {
-   font-size: 25px;
-   width: 30%;
-   align-self: center;
-   text-align: center;
- }
-
- .email-form {
-   padding: 10px;
-   display: flex;
-   flex-direction: row;
-   justify-content: center;
-   align-items: center;
- }
-
- .bottom {
-   width: 30%;
-   align-self: center;
-   text-align: center;
-   font-size: 40px;
- }
-
- .hidden-button {
-   height: 43px;
-   width: 43px;
-   visibility: hidden;
- }
-
- .button {
-   height: 43px;
-   width: 43px;
-   visibility: visible;
- }
-
- .email-input-1 {
-   margin-left: 40px;
-   width: 200px;
-   height: 20px;
-   padding: 10px;
-   color: white;
-   background: $white-fade2;
-   font-weight: 300;
-   font-size: 20px;
-   text-align: center;
-   border: none;
- }
-
- .email-input-2 {
-   margin-left: 147px;
-   width: 200px;
-   height: 20px;
-   padding: 10px;
-   color: white;
-   background: $white-fade2;
-   font-weight: 300;
-   font-size: 20px;
-   text-align: center;
-   border: none;
- }
-
- .email-input-3 {
-   margin-left: 147px;
-   width: 200px;
-   height: 20px;
-   padding: 10px;
-   color: lightgray;
-   background: $grey-fade;
-   font-weight: 300;
-   font-size: 20px;
-   text-align: center;
-   border: none;
- }
-
- // email-input needs 107 margin left additional after button is clicked
- ::-webkit-input-placeholder {
-   font-weight: 300;
-   color: white;
-   text-align: center;
- }
-
- [placeholder]:focus::-webkit-input-placeholder {
-   transition: opacity 0.5s 0.5s ease;
-   opacity: 0;
- }
-
- .submit-icon-1 {
-   height: 43px;
-   width: 43px;
-   cursor: pointer;
- }
-
- .submit-icon-2 {
-   height: 30px;
-   width: 30px;
-   align-self: flex-end;
-   cursor: pointer;
- }
-
- .role-options {
-   margin-left: 10px;
-   margin-top: 5px;
- }
-
- .r-o-1, .r-o-2, .r-o-3 {
-   margin-right: 10px;
- }
-
- .selection-form {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-content: center;
-   width: 150px;
-   height: 100px;
-   margin-top: 56px;
-   background-color: black;
-   visibility: visible;
- }
-
- .hidden-selection-form {
-   width: 150px;
-   height: 100px;
-   visibility: hidden;
- }
-
- .about-container {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   z-index: 11;
- }
-
- .about-header {
-   height: 29%;
- }
-
- .about-body {
-   margin-top: 5%;
-   width: 35%;
-   text-align: justify;
-   font-weight: 200;
-   font-size: 14px;
-   color: $white-fade1;
- }
-
- // About buttons
- .about-button {
-   transition: all .2s ease-in-out;
-      align-self: center;
-   &:hover {
-      transform: scale(1.2, 1.2);
-      cursor: pointer;
-   }
- }
- .about-open-button {
-   width: 50px;
-   height: 30px;
- }
- .about-close-button {
-   width: 50px;
-   height: 30px;
-   display: none;
- }
-
- .errors {
-   font-weight: 300;
-   font-size: 14px;
-   color: white;
-   text-align: center;
- }
+.footer {
+  align-self: center;
+  text-align: center;
+  font-size: $font-lg;
+}

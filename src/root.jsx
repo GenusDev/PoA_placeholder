@@ -15,7 +15,7 @@ class Root extends React.Component {
       role: '',
       button: 'button1',
       email_input_status: false,
-      email_style: 'email-input-1',
+      email_style: 'email-input email-input-1',
       errors: []
     };
 
@@ -61,9 +61,9 @@ class Root extends React.Component {
           .attr("fill-opacity", "0.05")
           .attr("r", function(d) {
             return 30;
-          })
+          });
         d3.select(".opacity-layer")
-          .style("background", "rgba(0, 0, 0, 0)")
+          .style("background", "rgba(0, 0, 0, 0)");
       })
       .on("mouseout", function() {
         d3.select(this)
@@ -74,11 +74,11 @@ class Root extends React.Component {
           })
           .attr("fill", "white")
           .attr("stroke-width", "0")
-          .attr("fill-opacity", "1.0")
+          .attr("fill-opacity", "1.0");
         d3.select(".opacity-layer")
           .transition()
           .duration(2000)
-          .style("background", "rgba(56, 71, 120, 0.7)")
+          .style("background", "rgba(56, 71, 120, 0.7)");
       });
   }
 
@@ -93,12 +93,12 @@ class Root extends React.Component {
     return (e) => {
       e.preventDefault();
       this.setState({ [property]: e.currentTarget.value }, () => {
-        if(this.state.email === '' && this.state.identity2 === 'selection-form') {
+        if(this.state.email === '' && this.state.identity2 === '') {
           this.setState({
             identity1: 'hidden-button',
             identity2: 'hidden-selection-form',
             button: 'button1',
-            email_style: 'email-input-1',
+            email_style: 'email-input email-input-1',
             errors: ''
           });
         } else if(this.state.email !== '') {
@@ -114,7 +114,7 @@ class Root extends React.Component {
     this.setState({
       button: 'button2',
       identity2: 'selection-form',
-      email_style: 'email-input-2'
+      email_style: 'email-input email-input-2'
     });
   }
 
@@ -169,7 +169,7 @@ class Root extends React.Component {
       email: 'submitted',
       identity1: 'hidden-button',
       identity2: 'hidden-selection-form',
-      email_style: 'email-input-3',
+      email_style: 'email-input email-input-3',
       email_input_status: !this.state.email_input_status
     });
   }
@@ -185,54 +185,48 @@ class Root extends React.Component {
 
     if (this.state.button === 'button1') {
       renderedButton = button1(identity1, openSelections);
-    } else if(this.state.button === 'button2') {
+    } else if (this.state.button === 'button2') {
       renderedButton = button2(identity2, selectRole, handleSubmit);
     }
 
-    return(
-      <div className="background"
-        id="background"
-        onChange={this.buttonToggle}>
-        <div className="opacity-layer">
-          <div className="content">
-            <div className="top">
-              <img className="logo" src="https://s3.amazonaws.com/genie-placeholder/logo.png" alt="logo"/>
-              <div className="header">
-                <div>GENUS</div>
-                <div>DEVELOPMENT</div>
-                <div>PARTNERS</div>
-              </div>
-              <div className="about-container">
-                <AboutModal/>
-              </div>
-            </div>
-            <div className="middle-1">
-              <div className="sub-header">
-                stay in touch
-              </div>
-            </div>
-            <div className="middle-2">
-              <div className="email-form">
-                <input
-                  className={ email_style }
-                  name="email"
-                  type="text"
-                  placeholder= "submit email"
-                  value={ email }
-                  disabled={ email_input_status }
-                  onChange={ this.update('email') }/>
-                {renderedButton}
-              </div>
-            </div>
-            <div className="middle-3">
-              {this.renderErrors()}
-            </div>
-            <div className="bottom">
-              <div>portal under</div>
-              <div>construction</div>
+    return (
+      <div className="opacity-layer box">
+
+        <div className="top series header">
+          <img className="logo" src="https://s3.amazonaws.com/genie-placeholder/white-logo.png" alt="logo"/>
+          <div className="header header-cont">
+            <div className="header-main">GENUS</div>
+            <div className="header-sub">DEVELOPMENT</div>
+            <div className="header-sub">PARTNERS</div>
+          </div>
+          <AboutModal/>
+        </div>
+
+        <div className="series content">
+          <div className="content-top">stay in touch</div>
+          <div className="content-mid">
+            <div className="email-form">
+              <input
+                className={ email_style }
+                name="email"
+                type="text"
+                placeholder= "submit email"
+                value={ email }
+                disabled={ email_input_status }
+                onChange={ this.update('email') }/>
+              {renderedButton}
             </div>
           </div>
+          <div className="content-bot">
+            {this.renderErrors()}
+          </div>
         </div>
+
+        <div className="series footer">
+          <div>portal under</div>
+          <div>construction</div>
+        </div>
+
       </div>
     );
   }

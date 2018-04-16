@@ -1,0 +1,44 @@
+@import 'variables.scss';
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 11;
+  margin-top: 10px;
+}
+
+.about-button {
+  transition: all .2s ease-in-out;
+  align-self: center;
+  &:hover {
+    transform: scale(1.2, 1.2);
+    cursor: pointer;
+  }
+}
+
+.open {
+  width: 75px;
+  height: 100%;
+  object-fit: contain;
+}
+
+.close {
+  width: 75px;
+  height: 100%;
+  object-fit: contain;
+  display: none;
+}
+
+.about-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-body {
+  width: 35%;
+  text-align: justify;
+  font-weight: 200;
+  color: $white-fade1;
+}
