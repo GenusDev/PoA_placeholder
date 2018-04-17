@@ -1,0 +1,408 @@
+/* line 3, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/about.scss */
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 11;
+  margin-top: 10px;
+}
+
+/* line 11, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/about.scss */
+.about-button {
+  transition: all .2s ease-in-out;
+  align-self: center;
+}
+/* line 14, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/about.scss */
+.about-button:hover {
+  transform: scale(1.2, 1.2);
+  cursor: pointer;
+}
+
+/* line 20, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/about.scss */
+.open {
+  width: 75px;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* line 26, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/about.scss */
+.close {
+  width: 75px;
+  height: 100%;
+  object-fit: contain;
+  display: none;
+}
+
+/* line 33, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/about.scss */
+.about-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 39, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/about.scss */
+.about-body {
+  width: 35%;
+  text-align: justify;
+  font-weight: 200;
+  color: rgba(255, 255, 255, 0.7);
+}
+/* line 3, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/email-input.scss */
+.email-form {
+  display: flex;
+}
+
+/* line 7, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/email-input.scss */
+.hidden-button {
+  height: 43px;
+  width: 43px;
+  visibility: hidden;
+}
+
+/* line 13, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/email-input.scss */
+.button {
+  height: 43px;
+  width: 43px;
+  visibility: visible;
+}
+
+/* line 19, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/email-input.scss */
+.email-input {
+  width: 200px;
+  height: 20px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.4);
+  font-size: 18.5px;
+  font-weight: 300;
+  border: none;
+  text-align: center;
+}
+/* line 28, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/email-input.scss */
+.email-input::-webkit-input-placeholder {
+  color: white;
+}
+/* line 30, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/email-input.scss */
+.email-input::-webkit-input-placeholder:focus {
+  transition: opacity 0.5s 0.5s ease;
+  opacity: 0;
+}
+
+/* line 37, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/email-input.scss */
+.email-input-1 {
+  margin-left: 40px;
+}
+
+/* line 41, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/email-input.scss */
+.email-input-2 {
+  margin-left: 147px;
+  font-size: 20px;
+}
+
+/* line 46, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/email-input.scss */
+.email-input-3 {
+  margin-left: 147px;
+  color: lightgray;
+  background: rgba(128, 128, 128, 0.7);
+}
+
+/* line 54, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/email-input.scss */
+.submit-icon-1 {
+  height: 43px;
+  width: 43px;
+  cursor: pointer;
+}
+
+/* line 60, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/email-input.scss */
+.submit-icon-2 {
+  height: 30px;
+  width: 30px;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+/* line 67, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/email-input.scss */
+.role-options {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+/* line 74, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/email-input.scss */
+.role-option {
+  margin-right: 10px;
+}
+
+/* line 78, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/email-input.scss */
+.selection-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 150px;
+  height: 100px;
+  background-color: black;
+  visibility: visible;
+}
+
+/* line 89, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/email-input.scss */
+.hidden-selection-form {
+  width: 150px;
+  height: 100px;
+  visibility: hidden;
+}
+
+/* line 95, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/email-input.scss */
+.errors {
+  font-weight: 300;
+  font-size: 14px;
+  color: white;
+  text-align: center;
+}
+/* line 3, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/flex_layout.scss */
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+/* line 9, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/flex_layout.scss */
+#root {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+/* line 15, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/flex_layout.scss */
+.box {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+/* line 21, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/flex_layout.scss */
+.box .series.header {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* line 29, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/flex_layout.scss */
+.box .series.content {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 35, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/flex_layout.scss */
+.box .series.footer {
+  flex: 1 1 auto;
+}
+@media screen and (max-width: 500px) {
+  /* line 2, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/media_queries.scss */
+  body {
+    overflow: auto;
+  }
+  /* line 4, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/media_queries.scss */
+  body .about-body {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 800px) {
+  /* line 11, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/media_queries.scss */
+  .about-body {
+    width: 75%;
+    margin-top: 15%;
+  }
+}
+@media screen and (max-width: 1050px) {
+  /* line 19, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/media_queries.scss */
+  .city-points {
+    display: none;
+  }
+
+  /* line 22, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/media_queries.scss */
+  .about-body {
+    width: 75%;
+    margin-top: 15%;
+  }
+}
+@media screen and (max-height: 650px) {
+  /* line 29, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/media_queries.scss */
+  .about-body {
+    margin-top: 15%;
+  }
+}
+@media screen and (max-height: 800px) {
+  /* line 35, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/media_queries.scss */
+  .about-body {
+    width: 65%;
+    margin-top: 10%;
+  }
+}
+/* line 1, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/reset.scss */
+html, body, header, nav, h1, a,
+ul, li, strong, main, button, i,
+section, img, div, h2, p, form,
+fieldset, label, input, textarea,
+span, article, footer, time, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+}
+
+/* line 19, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/reset.scss */
+ul {
+  list-style: none;
+}
+
+/* line 23, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/reset.scss */
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* line 29, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/reset.scss */
+input[type="password"],
+input[type="email"],
+input[type="text"],
+input[type="submit"],
+textarea,
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* line 40, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/reset.scss */
+button,
+input[type="submit"] {
+  cursor: pointer;
+}
+
+/* Clearfix */
+/* line 47, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/reset.scss */
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+/* line 20, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+html,
+body {
+  overflow: hidden;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: white;
+}
+
+/* line 27, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+#root {
+  width: 100%;
+  height: 100%;
+  background-image: url("https://s3.amazonaws.com/genie-placeholder/background-shifted.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+/* line 39, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.city-points {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+/* line 52, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.opacity-layer {
+  width: 100%;
+  height: 100%;
+  background: rgba(56, 71, 120, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-around;
+}
+
+/* line 62, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.logo {
+  object-fit: contain;
+  width: 70px;
+  height: 50px;
+  z-index: 11;
+}
+
+/* line 69, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.header-cont {
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 30px;
+}
+/* line 75, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.header-cont .header-sub {
+  opacity: 0.75;
+  font-size: 18.5px;
+  font-weight: 200;
+}
+
+/* line 82, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.content-top {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+/* line 88, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.content-mid {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  width: 200px;
+  height: 10%;
+  z-index: 3;
+  margin: 0 auto;
+}
+
+/* line 98, /Users/johnrudell/Desktop/PoA_placeholder/app/assets/stylesheets/application.scss */
+.footer {
+  align-self: center;
+  text-align: center;
+  font-size: 30px;
+}
