@@ -1,24 +1,19 @@
-# README
+# Genie Portal Placeholder Site
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<h3><a href="http://www.genusdev.com/">LIVE</a></h3>
 
-Things you may want to cover:
+Genie Portal is a transparent platform for managing tokenized securities and smart contracts for Genus Development Partners, a property and business developer.
 
-* Ruby version
+Users can input their email and choose why they are interested in the platform. They will be notified with updates and/or launches of the official Genie Portal.
 
-* System dependencies
+The platform is outfitted with spatial analytical overlays and a means of transferring and purchasing tokens. The intention is to use this project as a prototype that can be shown and then adapted for other developers interested in having portals to facilitate the financing of their projects. The platform will also provide a means for managing equity in the parent company and sub projects.
 
-* Configuration
+<img src="https://s3.amazonaws.com/genie-placeholder/readme-img.png"></img>
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Technologies
+ + React
+ + Redux
+ + Ruby on Rails
+ + PostgreSQL
+ + D3
+ + jQuery
